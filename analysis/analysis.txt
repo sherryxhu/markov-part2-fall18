@@ -42,5 +42,9 @@ Markov Model has a significant impact on the running time for BaseMarkov.
 Explain your reasoning.
 
 It shouldn't have a significant impact on the running time. Changing the orders from 5, to 50, 
-to 500, to 550, the runtimes are 0.108, 0.119, 0.092, and 0.185 seconds respectively. We can see that the 
-times stay roughly the same despite drastic changes in order. 
+to 500, to 550, the runtimes are 0.108, 0.119, 0.092, and 0.185 seconds respectively for 1000 chars. 
+We can see that the times stay roughly the same despite drastic changes in order. 
+
+The above explanation was based on my generated data. However, it could have a significant impact 
+on runtime. When order increases, it decreases the number of iterations in the for loop, so it could 
+decrease runtime by a significant amount. 

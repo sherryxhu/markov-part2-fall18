@@ -20,6 +20,11 @@ public class EfficientWordMarkov extends BaseWordMarkov {
 		super();
 	}
 	
+	/**
+	 * clears myMap
+	 * iterates through words to obtain all k-order WordGrams
+	 * adds WordGrams to myMap along with the following words in an ArrayList
+	 */
 	@Override
 	public void setTraining(String text) {
 		myMap.clear();
@@ -39,6 +44,10 @@ public class EfficientWordMarkov extends BaseWordMarkov {
 		}
 	}
 	
+	/**
+	 * looks up the WordGram in the map and returns its associated value,
+	 * which is an ArrayList of Strings
+	 */
 	@Override
 	public ArrayList<String> getFollows(WordGram kGram) {
 		if(!myMap.containsKey(kGram)) {

@@ -23,7 +23,7 @@ public class EfficientMarkov extends BaseMarkov{
 	/**
 	 * clears myMap
 	 * iterates through String to obtain all k-order substrings
-	 * adds substrings to myMap along with the following characters
+	 * adds substrings to myMap along with the following characters in an ArrayList
 	 */
 	@Override
 	public void setTraining(String text) {
@@ -43,6 +43,10 @@ public class EfficientMarkov extends BaseMarkov{
 		}
 	}
 	
+	/**
+	 * looks up the key in the map and returns its associated value, 
+	 * which is an ArrayList of Strings (characters that follow key)
+	 */
 	@Override
 	public ArrayList<String> getFollows(String key) {
 		if(!myMap.containsKey(key)) {

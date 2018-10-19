@@ -8,15 +8,15 @@ public class EfficientWordMarkov extends BaseWordMarkov {
 	
 	@Override
 	public void setTraining(String text) {
+		myMap.clear();
 		String[] words = text.split("\\s+");
+		myWords = words;
 		for(int i=0; i<words.length-myOrder+1;i++) {
-			int start = i;
-			int size = myOrder;
-			WordGram wd = new WordGram(words, start, size);
+			WordGram wd = new WordGram(words, i, myOrder);
 			if(!myMap.containsKey(wd)) {
 				myMap.put(wd, new ArrayList<String>());
 			}
-			if(i==text.length()-myOrder) {
+			if(i==words.length-myOrder) {
 				myMap.get(wd).add(PSEUDO_EOS);
 			}
 			else{

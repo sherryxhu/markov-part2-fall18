@@ -20,6 +20,11 @@ public class EfficientMarkov extends BaseMarkov{
 		super();
 	}
 	
+	/**
+	 * clears myMap
+	 * iterates through String to obtain all k-order substrings
+	 * adds substrings to myMap along with the following characters
+	 */
 	@Override
 	public void setTraining(String text) {
 		myMap.clear();
